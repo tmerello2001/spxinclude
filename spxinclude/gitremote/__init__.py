@@ -1,6 +1,7 @@
 #!/bin/python3
 # coding: utf-8
 import os
+from shutil import rmtree
 
 from sphinx.directives.other import BaseInclude, SphinxDirective
 from sphinx.util import logging
@@ -41,6 +42,8 @@ class GitRemoteInclude(BaseInclude, SphinxDirective):
             with open(dest, "w") as destfile:
                 destfile.write(target_content)
                 destfile.close()
+
+            rmtree(downloadpath, ignore_errors=True)
 
             self.arguments[0] = dest
             return super().run()
