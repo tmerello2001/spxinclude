@@ -15,6 +15,6 @@ setup(
     name='spxinclude',
     version=__version__,
     description='Sphinx include methods',
-    packages=find_packages(include=['spxinclude']),
+    packages=find_packages(include=['spxinclude', 'spxinclude.*']),
     install_requires=['GitPython==3.1.7', 'Sphinx==3.2.1'],
 )
