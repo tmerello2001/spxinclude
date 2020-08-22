@@ -16,7 +16,7 @@ class GitRemoteInclude(BaseInclude, SphinxDirective):
     """Create git-remote-include directive."""
 
     def run(self):
-        """Include .rst files from Github repositories"""
+        """Include remote files from Github repositories"""
         document = self.state.document
         env = document.settings.env
         buildpath = env.app.outdir
